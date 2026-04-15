@@ -153,7 +153,9 @@ export default function CategoriesView() {
                                   <h4 className="text-base font-semibold text-blue-600 dark:text-blue-400">
                                     {rule.rule}
                                   </h4>
-                                  <div className="text-sm text-gray-600 dark:text-gray-300 mt-1 line-clamp-2">
+                                  <div className={`mt-1 text-sm text-gray-600 dark:text-gray-300 leading-relaxed break-words ${
+                                    expandedRules.has(rule.rule) ? '' : 'line-clamp-2'
+                                  }`}>
                                     {rule.text}
                                   </div>
                                   <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -178,7 +180,7 @@ export default function CategoriesView() {
                             {expandedRules.has(rule.rule) && (
                               <div className="px-4 pb-3 border-t border-gray-200 dark:border-gray-600">
                                 {rule.examples && rule.examples.length > 0 && (
-                                  <div className="mt-3 mb-3 text-sm text-gray-600 dark:text-gray-400 italic bg-gray-100 dark:bg-gray-800 p-2 rounded border-l-2 border-gray-300 dark:border-gray-500">
+                                  <div className="mt-3 mb-3 text-sm text-gray-600 dark:text-gray-400 italic bg-gray-100 dark:bg-gray-800 p-2 rounded border-l-2 border-gray-300 dark:border-gray-500 break-words">
                                     <strong>Example{rule.examples.length > 1 ? 's' : ''}:</strong>
                                     <div className="mt-1 space-y-1">
                                       {rule.examples.map((example, exIndex) => (
@@ -193,11 +195,11 @@ export default function CategoriesView() {
                                       <div className="text-sm font-medium text-blue-600 dark:text-blue-300 mb-1">
                                         {subrule.subrule}
                                       </div>
-                                      <div className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                                      <div className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed break-words">
                                         {subrule.text}
                                       </div>
                                       {subrule.examples && subrule.examples.length > 0 && (
-                                        <div className="mt-1 text-sm text-gray-500 dark:text-gray-400 italic bg-gray-100 dark:bg-gray-800 p-2 rounded border-l-2 border-gray-300 dark:border-gray-500">
+                                        <div className="mt-1 text-sm text-gray-500 dark:text-gray-400 italic bg-gray-100 dark:bg-gray-800 p-2 rounded border-l-2 border-gray-300 dark:border-gray-500 break-words">
                                           <strong>Example{subrule.examples.length > 1 ? 's' : ''}:</strong>
                                           <div className="mt-1 space-y-1">
                                             {subrule.examples.map((example, exIndex) => (
@@ -218,11 +220,11 @@ export default function CategoriesView() {
                             <h4 className="text-base font-semibold text-blue-600 dark:text-blue-400 mb-2">
                               {rule.rule}
                             </h4>
-                            <div className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-2">
+                            <div className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed break-words mb-2">
                               {rule.text}
                             </div>
                             {rule.examples && rule.examples.length > 0 && (
-                              <div className="text-xs text-gray-600 dark:text-gray-400 italic bg-gray-100 dark:bg-gray-800 p-2 rounded border-l-2 border-gray-300 dark:border-gray-500">
+                              <div className="text-xs text-gray-600 dark:text-gray-400 italic bg-gray-100 dark:bg-gray-800 p-2 rounded border-l-2 border-gray-300 dark:border-gray-500 break-words">
                                 <strong>Example{rule.examples.length > 1 ? 's' : ''}:</strong>
                                 <div className="mt-1 space-y-1">
                                   {rule.examples.map((example, exIndex) => (
